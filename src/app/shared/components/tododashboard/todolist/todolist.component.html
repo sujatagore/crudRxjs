@@ -1,0 +1,18 @@
+
+<mat-list role="list" *ngIf="todoData.length > 0 ; else noTodoItem" class="d-flex justify-content-between">
+    <mat-list-item role="listitem" *ngFor="let t of todoData">
+        <span>
+            {{t.todoItem}}
+        </span>
+        <span>
+            <button mat-stroked-button color="accent" class="mr-2"><mat-icon>edit</mat-icon></button>
+            <button mat-stroked-button color="warn" (click)="onTodoRemove()"><mat-icon>delete</mat-icon></button>
+        </span>
+    </mat-list-item>
+</mat-list>
+
+<ng-template #noTodoItem>
+    <p class="alert alert-warning">
+        No Todo Item added yet!!!
+    </p>
+</ng-template>
